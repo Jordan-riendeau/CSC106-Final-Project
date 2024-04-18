@@ -133,6 +133,10 @@ var drawBitSEmoji= function(bitmojiX, bitmojiY, bitmojiH){
 
 //Highest layer of new function
 var drawBitREmoji = function (x, y, h){
+    drawBitEmoji(x, y, 70);
+};
+
+var drawBit70Emoji = function (x, y, h){
     drawBitEmoji(x, y, 70); //height 70 hardcode interfers with buttons
 };
 
@@ -156,7 +160,7 @@ JsEmoji.prototype.draw = function() {
     if (keyIsPressed && keyCode === DOWN) {
         drawBitSEmoji(this.x, this.y, 40, 40);
     } else {
-        drawBitREmoji(this.x, this.y, 40, 40);
+        drawBit70Emoji(this.x, this.y, 40, 40);
     }
     
     if (this.y < 50 && nextScore===1){
