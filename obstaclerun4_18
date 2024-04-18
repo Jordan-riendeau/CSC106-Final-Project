@@ -133,7 +133,7 @@ var drawBitSEmoji= function(bitmojiX, bitmojiY, bitmojiH){
 
 //Highest layer of new function
 var drawBitREmoji = function (x, y, h){
-    drawBitEmoji(x, y, 70);
+    drawBitEmoji(x, y, h);
 };
 
 var drawBit70Emoji = function (x, y, h){
