@@ -1,0 +1,89 @@
+var drawShirtDuck= function(bitmojiX,bitmojiY,bitmojiHeight)
+{
+    
+    noStroke();
+    // shirt
+    fill(186, 163, 163);
+    quad(bitmojiX+bitmojiHeight/100*15, bitmojiY+bitmojiHeight/100*50, bitmojiX+bitmojiHeight/100*60, bitmojiY+bitmojiHeight/100*105, bitmojiX-bitmojiHeight/100*60, bitmojiY+bitmojiHeight/100*105, bitmojiX-bitmojiHeight/100*25, bitmojiY+bitmojiHeight/100*60);
+};
+
+var drawHeadDuck= function(bitmojiX,bitmojiY,bitmojiHeight)
+{
+    //head
+    fill(255, 224, 189);
+    ellipse(bitmojiX+bitmojiHeight/100*32,bitmojiY+bitmojiHeight/100*44,bitmojiHeight/100*150,bitmojiHeight/100*150);
+};
+
+var drawEyesDuck= function(bitmojiX,bitmojiY,bitmojiHeight)
+{
+    //eyes
+    fill(247, 242, 242);
+    ellipse(bitmojiX+(bitmojiHeight/100*71),bitmojiY-bitmojiHeight/100*-40,bitmojiHeight/100*26,bitmojiHeight/100*18);// right eye
+    ellipse(bitmojiX-bitmojiHeight/100*-13,bitmojiY-bitmojiHeight/100*-19,bitmojiHeight/100*26,bitmojiHeight/100*18);// left eye
+    //right pupil
+    fill(94, 72, 30);
+    ellipse(bitmojiX+bitmojiHeight/100*71,bitmojiY-bitmojiHeight/100*-40,bitmojiHeight/100*14,bitmojiHeight/100*11);
+    fill(13, 11, 11);
+    ellipse(bitmojiX+bitmojiHeight/100*71,bitmojiY-bitmojiHeight/100*-40,bitmojiHeight/100*5,bitmojiHeight/100*5);
+    //left pupil
+    fill(94, 72, 30);
+    ellipse(bitmojiX-bitmojiHeight/100*-13,bitmojiY-bitmojiHeight/100*-19,bitmojiHeight/100*14,bitmojiHeight/100*10);
+    fill(13, 11, 11);
+    ellipse(bitmojiX-bitmojiHeight/100*-13,bitmojiY-bitmojiHeight/100*-18,bitmojiHeight/100*5,bitmojiHeight/100*5);
+};
+
+var drawMouthDuck= function(bitmojiX,bitmojiY,bitmojiHeight)
+{
+    //mouth
+    fill(255, 255, 255);
+    arc(bitmojiX+bitmojiHeight/100*17, bitmojiY+bitmojiHeight/100*80, bitmojiHeight/100*80, bitmojiHeight/100*50, 35, 215);
+    stroke(0, 0, 0);
+    line(bitmojiX+bitmojiHeight/100*36,bitmojiY+bitmojiHeight/100*101,bitmojiX-bitmojiHeight/100*20,bitmojiY+bitmojiHeight/100*76);
+};
+
+var drawHatDuck= function(bitmojiX,bitmojiY,bitmojiHeight)
+{
+    //hat & nose
+    fill(72, 242, 239);
+    arc(bitmojiX+bitmojiHeight/100*38, bitmojiY-bitmojiHeight/100*-16, bitmojiHeight/100*155, bitmojiHeight/100*-100, -22, 160);
+    fill(13, 13, 12);
+    arc(bitmojiX+bitmojiHeight/100*40, bitmojiY-bitmojiHeight/100*-14, bitmojiHeight/100*49, bitmojiHeight/100*-30, -22, 160);
+    strokeWeight(bitmojiHeight/100*1/2);
+    //nose
+    fill(255, 224, 189);
+    bezier(bitmojiX+bitmojiHeight/100*40, bitmojiY+bitmojiHeight/100*55, bitmojiX+bitmojiHeight/100*10, bitmojiY+bitmojiHeight/100*66, bitmojiX-bitmojiHeight/100*-1, bitmojiY+bitmojiHeight/100*46, bitmojiX-bitmojiHeight/100*-18, bitmojiY+bitmojiHeight/100*45);
+};
+
+var drawInitialsDuck= function(bitmojiX,bitmojiY,bitmojiHeight)
+{
+    // initials
+    fill(22, 201, 201);
+    textAlign(LEFT, BASELINE);
+    textSize(bitmojiHeight/100*30);
+    text("JR",bitmojiX-bitmojiHeight/100*20, bitmojiY+bitmojiHeight/100*100);
+};
+
+var drawBitmojiDuck= function(bitmojiX,bitmojiY,bitmojiHeight)
+{
+    drawShirtDuck(bitmojiX,bitmojiY,bitmojiHeight);
+    drawInitialsDuck(bitmojiX,bitmojiY,bitmojiHeight);
+    drawHeadDuck(bitmojiX,bitmojiY,bitmojiHeight);
+    drawEyesDuck(bitmojiX,bitmojiY,bitmojiHeight);
+    drawMouthDuck(bitmojiX,bitmojiY,bitmojiHeight);
+    drawHatDuck(bitmojiX,bitmojiY,bitmojiHeight);
+};
+
+
+var BitmojiDuck = function(x, y, h) {
+    this.x = x;
+    this.y = y;
+    this.h = h;
+};
+BitmojiDuck.prototype.draw = function() {
+    this.y = constrain(this.y, 0, height-50);
+    drawBitmojiDuck(this.x, this.y, this.h); 
+};
+
+var BitmojiDuck = new BitmojiDuck(213, 194, 120);
+
+BitmojiDuck.draw();
