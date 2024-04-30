@@ -1,0 +1,32 @@
+var deathScreen = function ()
+{
+    currentScene = 4;
+    
+    
+    
+        background(237, 99, 99);
+        textAlign(CENTER, CENTER);
+        textSize(40);
+        
+        
+        noStroke();
+        fill(252, 159, 252);
+        //rect(0, topMoverYpos, 400, 200);
+        //rect(0, bottomMoverYpos , 400, 200);
+        
+   
+        background(237, 99, 99);
+         fill(0, 0, 0);
+        text ("You loose", 200, 200);
+        fill(94, 22, 22);
+        rect(0, topMoverYpos, 400, 200); //pinkrect1
+        rect(0, bottomMoverYpos , 400, 200); //pinkrect2
+    
+        topMoverYpos--;
+        bottomMoverYpos++;
+        
+       
+        
+    
+    
+};
