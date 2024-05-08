@@ -162,7 +162,7 @@ var JsEmoji = function(x, y) {
 };
 
 JsEmoji.prototype.draw = function() {
-    this.y = constrain(this.y+con, 200, height - 60);
+    this.y = constrain(this.y+con, 220, height - 60);
     
     for (var i = 0; i < ships.length; i++) {
         if (this.x > ships[i].x-3 && this.x <= ships[i].x) {
@@ -363,7 +363,7 @@ var Bitmoji = function(x, y) {
 };
 
 Bitmoji.prototype.draw = function() {
-    this.y = constrain(this.y+con, 200, height - 60);
+    this.y = constrain(this.y+con, 230, height - 60);
     
     for (var i = 0; i < ships.length; i++) {
         if (this.x > ships[i].x-3 && this.x <= ships[i].x) {
